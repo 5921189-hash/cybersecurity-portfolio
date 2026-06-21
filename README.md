@@ -52,6 +52,6 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 
 ---
 
-## 📬 Contact Me
-* **Email:** [your-email@example.com]
-* **LinkedIn:** [Your LinkedIn Profile Link]
+## Contact Me
+* **Email:** 5921189@gmail.com
+* **LinkedIn:** [Boris Mats](https://www.linkedin.com/in/boris-mats-4b7102254/)
