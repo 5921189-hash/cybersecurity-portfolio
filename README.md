@@ -48,7 +48,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 #### 3. Incident Documentation & Response Playbooks (NIST Framework)
 * **Objective:** Documented security incidents (Incident State Forms) following the NIST/SANS Incident Response lifecycle based on a ransomware attack simulation.
 * **Skills Demonstrated:** Incident scoping, impact assessment, and defining actionable containment, eradication, and recovery strategies.
-* **Artifact:** [Security Incident Journal](https://github.com/5921189-hash/cybersecurity-portfolio/blob/main/google-labs/security-incident-journal.md)
+* **Artifact:** [Security Incident Journal](./google-labs/security-incident-journal.md)
 
 ---
 
