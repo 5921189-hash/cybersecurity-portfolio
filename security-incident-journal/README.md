@@ -4,7 +4,7 @@ This repository contains my hands-on **Incident Analysis Journal** completed as 
 
 ---
 
-## 🛠️ Security Toolbelt & Methodologies
+## Security Toolbelt & Methodologies
 * **OSINT & Malware Triage:** VirusTotal (Hash verification, URL analysis, IP reputation checking).
 * **SIEM Operations:** Splunk (Log ingestion, event normalization, and search query execution).
 * **Frameworks & Playbooks:** NIST SP 800-61 r2 Incident Response Lifecycle, Phishing Triage Playbooks.
@@ -12,7 +12,7 @@ This repository contains my hands-on **Incident Analysis Journal** completed as 
 
 ---
 
-## 📂 Incident Log Entries
+## Incident Log Entries
 
 ### 🔹 Entry 1: Ransomware Attack on Healthcare Provider
 * **Date:** November 9, 2025
@@ -76,7 +76,7 @@ This repository contains my hands-on **Incident Analysis Journal** completed as 
 
 ---
 
-## 🧠 Personal Reflections & Professional Growth
+## Personal Reflections & Professional Growth
 
 #### Technical Obstacles Overcome
 During the program, the official Splunk modules were modified/removed from the standard curriculum. Recognizing the criticality of SIEM proficiency for a Tier 1 SOC role, I took the initiative to source external, third-party Splunk labs and environments independently. This allowed me to master SIEM search syntax, query logic, and event correlation under realistic conditions.
