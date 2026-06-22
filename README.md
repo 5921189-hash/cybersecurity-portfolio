@@ -1,6 +1,6 @@
 # cybersecurity-portfolio
 
-# SOC Analyst (Tier 1) Portfolio | Boris Mats
+# SOC Analyst Portfolio | Boris Mats
 
 Hello! I am an aspiring Cybersecurity Analyst specializing in security monitoring, network traffic analysis, and incident management (Blue Team operations). I have a solid foundation in Linux administration, network protocols, and threat detection methodologies.
 
