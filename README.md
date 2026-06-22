@@ -43,7 +43,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 #### 2. Security Task Automation (Python & SQL)
 * **Objective:** Developed a Python script to automate the updates of an IP address allow-list and used SQL queries to audit database access logs.
 * **Skills Demonstrated:** Parsing text files in Python, conditional logic for security automation, and crafting optimized SQL queries for user privilege auditing.
-* **Artifact:** [Python File Automation Script](./google-labs/file_updater.py)
+* **Artifact:** [Python File Automation Script](./security-task-automation/File-Updates-in-Python/File-Updates-in-Python.md)
 
 #### 3. Incident Documentation & Response Playbooks (NIST Framework)
 * **Objective:** Documented security incidents (Incident State Forms) following the NIST/SANS Incident Response lifecycle based on a ransomware attack simulation.
