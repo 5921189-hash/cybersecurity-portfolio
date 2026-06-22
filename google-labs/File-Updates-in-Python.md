@@ -1,6 +1,6 @@
 # Algorithm for File Updates in Python
 
-## 📝 Project Description
+## Project Description
 In this project scenario, a medical organization restricts access to patient files containing sensitive personal data. Access is only permitted from authorized IP addresses stored in a designated allow-list file (`textfile.txt`). 
 
 A separate list (`remove_list`) contains IP addresses of employees who have changed roles or left the organization. These addresses must be systematically identified and removed from the active allow-list.
@@ -10,7 +10,7 @@ This project demonstrates how to securely open, read, parse, manipulate, and ove
 ---
 ---
 
-## 🛠️ Step-by-Step Implementation
+## Step-by-Step Implementation
 
 ### 1. Open the File Containing the Allow-List
 To open and manage the file safely, I utilized Python's `with` statement alongside the `open()` function. 
