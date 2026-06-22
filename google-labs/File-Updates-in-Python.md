@@ -1,0 +1,85 @@
+# Algorithm for File Updates in Python
+
+## 📝 Project Description
+In this project scenario, a medical organization restricts access to patient files containing sensitive personal data. Access is only permitted from authorized IP addresses stored in a designated allow-list file (`textfile.txt`). 
+
+A separate list (`remove_list`) contains IP addresses of employees who have changed roles or left the organization. These addresses must be systematically identified and removed from the active allow-list.
+
+This project demonstrates how to securely open, read, parse, manipulate, and overwrite files using basic Python structures, including loops, conditional statements, and string/list methods.
+
+---
+
+## 🛠️ Step-by-Step Implementation
+
+### 1. Open the File Containing the Allow-List
+To open and manage the file safely, I utilized Python's `with` statement alongside the `open()` function. 
+* The `with` statement ensures the file is automatically closed immediately after the block executes, preventing memory leaks or file corruption.
+* The `open(import_file, 'r')` function prepares the target file for reading (`'r'`).
+* The `as file` clause assigns the file object to a variable name for reference.
+
+```python
+# Assign 'import_file' variable to the name of the file
+import_file = 'textfile.txt'
+
+# Assign 'remove_list' to a list of IP addresses that are no longer allowed access
+remove_list = ["192.168.25.60", "192.168.168.144", "192.168.214.49", "192.168.148.80"]
+
+# First line of 'with' statement for reading
+with open(import_file, 'r') as file:
+    # Use '.read()' to read the imported file and store it in a variable named 'users_info'
+    users_info = file.read()
+
+# Verify the file contents were read correctly
+print(users_info)
+```
+Output of Input File (`users_info`):
+```
+username,ip_address,time,date
+tshah,192.168.92.147,15:26:08,2022-05-10
+dtanaka,192.168.98.221,9:45:18,2022-05-09
+... [truncated for readability] ...
+jsoto,192.168.25.60,5:09:21,2022-05-09
+```
+---
+
+### 2. Convert the String into a List of Lines
+Working with data in a raw string format is inefficient for line-by-line validation. To manipulate specific elements, I converted the string into a list format using the `.split()` method. By default, `.split()` separates strings by whitespace, which effectively splits our text by line breaks (`\n`).
+
+```python
+# Use '.split()' to convert 'users_info' from string to a list of lines
+users_info_list_lines = users_info.split()
+
+# Display the converted list of lines
+print(users_info_list_lines)
+```
+Ouput of `users_info_list_lines`:
+```
+['username,ip_address,time,date', 'tshah,192.168.92.147,15:26:08,2022-05-10', ... [truncated for readability] ... 'eraab,192.168.24.12,11:29:27,2022-05-11', 'jsoto,192.168.25.60,5:09:21,2022-05-09']
+```
+### 3. Parse Lines into Sublists (List of Lists)
+
+The raw data contains parameters we don't currently need (`usernames`, `timestamps`, `dates`). To isolate and inspect only the IP addresses, I transformed the flat list of strings into a structured list of lists using a `for` loop, `range()`, and `len()`.
+- `for loop` - go through every element of the list
+- `range()` function - says to `for loop` how many times it shuold performe
+- `len()` function - give total number of elements in the list
+- `.split(',')` function - split every element of `users_info_list_lines` to sublist on `,`
+- `.append()` function - append every new subllist to the end of the main list
+```python
+# Create an empty list to hold the parsed structures
+users_info_list_of_lists = []
+
+# Use a for loop to iterate through each row of the log data
+for i in range(len(users_info_list_lines)):
+    # Split each line by the comma delimiter to create a sublist
+    sublist = users_info_list_lines[i].split(',')
+
+    # Append the new sublist to the main repository list
+    users_info_list_of_lists.append(sublist)
+
+# Display the multi-dimensional list structure
+print(users_info_list_of_lists)
+```
+
+Ouput of `users_info_list_of_lists`:
+
+[['username', 'ip_address', 'time', 'date'], ['tshah', '192.168.92.147', '15:26:08', '2022-05-10'], ... [truncated for readability] ... ['eraab', '192.168.24.12', '11:29:27', '2022-05-11'], ['jsoto', '192.168.25.60', '5:09:21', '2022-05-09']]
