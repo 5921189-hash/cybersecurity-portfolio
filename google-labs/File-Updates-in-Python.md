@@ -81,5 +81,37 @@ print(users_info_list_of_lists)
 ```
 
 Ouput of `users_info_list_of_lists`:
-
+```
 [['username', 'ip_address', 'time', 'date'], ['tshah', '192.168.92.147', '15:26:08', '2022-05-10'], ... [truncated for readability] ... ['eraab', '192.168.24.12', '11:29:27', '2022-05-11'], ['jsoto', '192.168.25.60', '5:09:21', '2022-05-09']]
+```
+
+### 4. Extract IP Addresses from Sublists
+
+With the log rows split into indexed arrays, the IP addresses are now positioned consistently at index 1 inside every sublist. I used another `for loop` starting from index 1 (skipping index 0 because it contains CSV column headers) to extract the IPs.
+
+```python
+# Create an empty list to store isolated IP addresses
+ip_addresses = []
+
+# Iterate through sublists, skipping the header line (index 0)
+for i in range(1, len(users_info_list_of_lists)):
+    sublist = users_info_list_of_lists[i]
+
+    # Append the second element (index 1 - the IP address) to our target list
+    ip_addresses.append(sublist[1])
+
+# Display the isolated IP addresses list
+print(ip_addresses)
+```
+Output of `ip_adresses`
+```
+['192.168.92.147', '192.168.98.221', ... [truncated for readability] ... '192.168.24.12', '192.168.25.60']
+```
+
+5. Remove Unauthorized IP Addresses
+
+To remove addresses found in the remove_list from the active ip_addresses allow-list, I built a conditional block:
+
+- An outer for loop evaluates each element inside the ip_addresses list.
+- An inner if statement applies the in comparison operator to check if that specific IP exists inside the remove_list.
+- If a match is found, the .remove(element) method deletes it from the active list.
