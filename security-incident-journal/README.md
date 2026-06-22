@@ -5,7 +5,7 @@ This repository contains my hands-on **Incident Analysis Journal** completed as 
 ---
 
 ## Security Toolbelt & Methodologies
-* **OSINT & Malware Triage:** VirusTotal (Hash verification, URL analysis, IP reputation checking).
+* **OSINT and Malware Triage:** VirusTotal (Hash verification, URL analysis, IP reputation checking).
 * **SIEM Operations:** Splunk (Log ingestion, event normalization, and search query execution).
 * **Frameworks & Playbooks:** NIST SP 800-61 r2 Incident Response Lifecycle, Phishing Triage Playbooks.
 * **Analytical Framework:** The 5 W's (Who, What, When, Where, Why) approach to incident scoping.
