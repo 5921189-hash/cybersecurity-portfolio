@@ -16,14 +16,14 @@ This repository contains my hands-on **Incident Analysis Journal** completed as 
 
 ### 🔹 Entry 1: Ransomware Attack on Healthcare Provider
 * **Date:** November 9, 2025
-* **Context:** Primary care medical organization infrastructure compromise.
+* **Context:** A ransomware attack targeted a small primary care medical organization.
 * **The 5 W's Analysis:**
-  * **Who:** An organized, unethical threat group targeting healthcare and transportation sectors.
-  * **What:** Malware delivery via phishing emails leading to bulk data encryption and ransom demands. Business operations were severely disrupted due to the loss of access to critical patient data.
+  * **Who:** An organized group of unethical hackers specializing in attacks on healthcare and transportation companies
+  * **What:** Infecting computers with malware through phishing emails gave hackers access to the computers in order to encrypt data and then demand a large sum of money in exchange for a key to decrypt the data. This resulted in serious disruption to business operations as access to important patient data was lost.
   * **When:** Thursday at 09:00 AM.
   * **Where:** Local workstations and network endpoints via unauthorized remote access.
   * **Why:** Initial access was gained when an employee executed a malicious phishing attachment. Contributing factors include lack of email security gateway filtering, weak attachment inspection policies, and insufficient employee security awareness.
-* **SOC Takeaway & Remediation:** Immediate coordination with law enforcement is required. Critical need to evaluate data decryption options and implement an immutable, offline backup policy to ensure business continuity.
+* **Takeaway & Remediation:** Immediate coordination with law enforcement is required. Critical need to evaluate data decryption options and implement an immutable, offline backup policy to ensure business continuity.
 
 ---
 
@@ -36,21 +36,22 @@ This repository contains my hands-on **Incident Analysis Journal** completed as 
   * **When:** 01:11 PM.
   * **Where:** Local employee workstation.
   * **Why:** Ingestion and execution of an untrusted file from a suspicious inbound email.
-* **SOC Takeaway & Remediation:** Deployed VirusTotal to analyze file hashes, relationships, and sandbox behavior. 
-* **Defensive Recommendations:** Enforce execution restrictions (e.g., AppLocker/SRP) to block untrusted attachments from running directly from mail clients, and implement continuous security awareness training (SAT).
+* **Takeaway & Remediation:** Deployed VirusTotal to analyze file hashes, relationships, and sandbox behavior. 
+* **Defensive Recommendations:** Enforce execution restrictions (e.g., AppLocker/SRP) to block untrusted attachments from running directly from mail clients, and implement continuous security awareness training.
 
 ---
 
-### 🔹 Entry 3: Phishing Alert Triage & Playbook Execution
+### 🔹 Entry 3: Phishing Alert Triage and Playbook Execution
 * **Date:** November 18, 2025
 * **Tools Used:** VirusTotal, Phishing Response Playbook
+* **Context:** Response to alert ticket due to phishing playbook
 * **The 5 W's Analysis:**
   * **Who:** External malicious actor. Email headers revealed a malformed sender address (missing '@' symbol) and an unaligned display name.
   * **What:** Phishing attempt leading to a potential malicious attachment execution/link click.
-  * **When:** July 20, 2022, 09:30:14 AM (Log timestamp).
+  * **When:** July 20, 2022, 09:30:14 AM 
   * **Where:** Employee endpoint (IP: `176.157.125.93`).
   * **Why:** Inadequate inbound email filtering allowed a malformed, malicious message into the inbox.
-* **SOC Takeaway & Remediation:** The alert was triaged as a **True Positive**. Cross-referencing the sender's IP on VirusTotal flagged it as a malicious infrastructure node originating from China. The attachment hash matched known malware signatures, and the email body contained distinct grammatical errors indicative of phishing.
+* **Takeaway & Remediation:** The alert was triaged as a True Positive. Cross-referencing the sender's IP on VirusTotal flagged it as a malicious infrastructure node originating from China. The attachment hash matched known malware signatures, and the email body contained distinct grammatical errors indicative of phishing.
 
 ---
 
@@ -59,16 +60,16 @@ This repository contains my hands-on **Incident Analysis Journal** completed as 
 * **Context:** Post-incident review of a data breach.
 * **The 5 W's Analysis:**
   * **Who:** External malicious actor.
-  * **What:** Data exfiltration achieved via **Forced Browsing** tactics.
+  * **What:** Data exfiltration achieved via Forced Browsing tactics.
   * **When:** December 28, 2022, at 07:20 PM.
   * **Where:** Corporate public-facing web application.
   * **Why:** Insecure URL access controls allowed unauthenticated users to guess and directly access restricted directory paths.
-* **SOC Takeaway & Remediation:** A critical observation from this report was a **6-day visibility gap** between initial malicious activity and formal incident logging. 
-* **Defensive Recommendations:** Enforce strict broken object-level authorization (BOLA) defenses on the web server, and optimize SIEM alerting thresholds to minimize time-to-detection (TTD).
+* **Takeaway & Remediation:** A critical observation from this report was a 6-day visibility gap between initial malicious activity and formal incident logging. 
+* **Defensive Recommendations:** Enforce strict broken object-level authorization defenses on the web server, and optimize SIEM alerting thresholds to minimize time to detection.
 
 ---
 
-### 🔹 Entry 5: Log Analysis & Security Event Auditing
+### 🔹 Entry 5: Log Analysis and Security Event Auditing
 * **Date:** November 28, 2025
 * **Tools Used:** Splunk (SIEM)
 * **Context:** Analyzing security events for "Buttercup Games."
