@@ -8,6 +8,7 @@ A separate list (`remove_list`) contains IP addresses of employees who have chan
 This project demonstrates how to securely open, read, parse, manipulate, and overwrite files using basic Python structures, including loops, conditional statements, and string/list methods.
 
 ---
+---
 
 ## 🛠️ Step-by-Step Implementation
 
@@ -56,6 +57,8 @@ Ouput of `users_info_list_lines`:
 ```
 ['username,ip_address,time,date', 'tshah,192.168.92.147,15:26:08,2022-05-10', ... [truncated for readability] ... 'eraab,192.168.24.12,11:29:27,2022-05-11', 'jsoto,192.168.25.60,5:09:21,2022-05-09']
 ```
+---
+
 ### 3. Parse Lines into Sublists (List of Lists)
 
 The raw data contains parameters we don't currently need (`usernames`, `timestamps`, `dates`). To isolate and inspect only the IP addresses, I transformed the flat list of strings into a structured list of lists using a `for` loop, `range()`, and `len()`.
@@ -84,6 +87,7 @@ Ouput of `users_info_list_of_lists`:
 ```
 [['username', 'ip_address', 'time', 'date'], ['tshah', '192.168.92.147', '15:26:08', '2022-05-10'], ... [truncated for readability] ... ['eraab', '192.168.24.12', '11:29:27', '2022-05-11'], ['jsoto', '192.168.25.60', '5:09:21', '2022-05-09']]
 ```
+---
 
 ### 4. Extract IP Addresses from Sublists
 
@@ -107,11 +111,63 @@ Output of `ip_adresses`
 ```
 ['192.168.92.147', '192.168.98.221', ... [truncated for readability] ... '192.168.24.12', '192.168.25.60']
 ```
+---
 
-5. Remove Unauthorized IP Addresses
+### 5. Remove Unauthorized IP Addresses
 
-To remove addresses found in the remove_list from the active ip_addresses allow-list, I built a conditional block:
+To remove addresses found in the `remove_list` from the active `ip_addresses` allow-list, I built a conditional block:
 
-- An outer for loop evaluates each element inside the ip_addresses list.
-- An inner if statement applies the in comparison operator to check if that specific IP exists inside the remove_list.
-- If a match is found, the .remove(element) method deletes it from the active list.
+- An outer `for loop` evaluates each element inside the `ip_addresses` list.
+- An inner `if` statement applies the `in` comparison operator to check if that specific IP exists inside the `remove_list`.
+- If a match is found, the `.remove(element)` method deletes it from the active list.
+
+```python
+# Evaluate active IP addresses against the revocation list
+for element in ip_addresses:
+    if element in remove_list:
+        ip_addresses.remove(element)
+
+# Display the revised allow-list after filtering
+print(ip_addresses)
+```
+
+Output of `ip_addresses` **before** removing
+
+```
+['192.168.92.147', '192.168.98.221', '192.168.110.131', '192.168.168.144', '192.168.170.243', '192.168.238.42', '192.168.52.90', '192.168.58.217', '192.168.214.49', '192.168.247.153', '192.168.197.247', '192.168.46.207', '192.168.96.244', '192.168.131.147', '192.168.60.111', '192.168.148.80', '192.168.4.157', '192.168.210.228', '192.168.24.12', '192.168.25.60']
+```
+
+Output of `ip_addresses` **after** removing
+
+```
+['192.168.92.147', '192.168.98.221', '192.168.110.131', '192.168.170.243', '192.168.238.42', '192.168.52.90', '192.168.58.217', '192.168.247.153', '192.168.197.247', '192.168.46.207', '192.168.96.244', '192.168.131.147', '192.168.60.111', '192.168.4.157', '192.168.210.228', '192.168.24.12']
+```
+
+---
+
+### 6. Update the File with the Revised Allow-List
+
+Finally, the modified list needs to be written back to the file.
+
+- First, the list is converted back into a string using the `"\n".join(ip_addresses)` method, placing each IP address on a new line.
+
+- Then, a `with` statement opens the file using the write mode (`'w'`), allowing the script to completely overwrite the old log with the secure, updated data.
+
+```python
+# Convert the list of IPs back into a  string
+ip_addresses_str = "\n".join(ip_addresses)
+
+# Open the original file in write mode ('w') to replace obsolete records
+with open(import_file, 'w') as file:
+    # Overwrite the file content
+    file.write(ip_addresses_str)
+```
+
+---
+---
+## Key Takeaways & SOC Relevance
+
+- Automated Identity & Access Management (IAM): Manually checking logs or firewall lists of hundreds of employees introduces massive room for human error. This script demonstrates how Python can be leveraged to parse logs and automate access token audits.
+
+- Core Scripting Competency: Successfully practiced essential automation concepts: managing file input/output (I/O) handles, complex string parsing, array-indexing logic, and safe write operations to production logs.
+
