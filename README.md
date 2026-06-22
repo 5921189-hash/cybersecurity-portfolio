@@ -5,10 +5,10 @@
 Hello! I am an aspiring Cybersecurity Analyst specializing in security monitoring, network traffic analysis, and incident management (Blue Team operations). I have a solid foundation in Linux administration, network protocols, and threat detection methodologies.
 
 ## Tech Stack & Skills
-* **SIEM & Monitoring:** Log analysis, alert triage, creating detection rules.
+* **SIEM and Monitoring:** Log analysis, alert triage, creating detection rules.
 * **Network Security:** Wireshark, Nmap, TCP/IP paradigm, VPN configuration.
 * **Threat Intelligence & Analysis:** Honeypots (Cowrie), OSINT, PEStudio, malware behavior analysis.
-* **OS & Scripting:** Linux System Administration (Bash), Automation (Python), Data Querying (SQL).
+* **OS and Scripting:** Linux System Administration (Bash), Automation (Python), Data Querying (SQL).
 * **Certifications:** Google Cybersecurity Professional Certificate, CompTIA Security+ .
 
 ---
@@ -48,7 +48,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 #### 3. Incident Documentation & Response Playbooks (NIST Framework)
 * **Objective:** Documented security incidents (Incident State Forms) following the NIST/SANS Incident Response lifecycle based on a ransomware attack simulation.
 * **Skills Demonstrated:** Incident scoping, impact assessment, and defining actionable containment, eradication, and recovery strategies.
-* **Artifact:** [Incident Response Playbooks & Documentation](./google-labs/incident-reports/)
+* **Artifact:** [Security Incident Journal](https://github.com/5921189-hash/cybersecurity-portfolio/blob/main/google-labs/security-incident-journal.md)
 
 ---
 
