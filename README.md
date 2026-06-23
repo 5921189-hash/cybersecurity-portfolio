@@ -35,22 +35,17 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 ### Project 2: Google Cybersecurity Professional Labs (Threat Analysis & Incident Response)
 **Description:** A compilation of practical labs and analytical reports completed during the Google Cybersecurity program, demonstrating proficiency with industry-standard SOC tools.
 
-#### 1. Network Traffic Analysis & Scanning Detection (Wireshark & Nmap)
-* **Objective:** Investigated PCAP files to identify unauthorized network scanning and potential vulnerability exploitation attempts.
-* **Skills Demonstrated:** Identifying Nmap scan signatures (SYN, FIN, and Xmas scans), analyzing TCP streams, and detecting host compromise via anomalous traffic patterns.
-* **Artifact:** [Network Incident Investigation Report](./google-labs/network-analysis-report.md)
-
-#### 2. Security Task Automation (Python & SQL)
+#### 1. Security Task Automation (Python & SQL)
 * **Objective:** Developed a Python script to automate the updates of an IP address allow-list and used SQL queries to audit database access logs.
 * **Skills Demonstrated:** Parsing text files in Python, conditional logic for security automation, and crafting optimized SQL queries for user privilege auditing.
 * **Artifact:** [Python File Automation Script](./security-task-automation/File-Updates-in-Python/File-Updates-in-Python.md)
 
-#### 3. Incident Documentation and Response Playbooks (NIST Framework)
+#### 2. Incident Documentation and Response Playbooks (NIST Framework)
 * **Objective:** Documented security incidents (Incident State Forms) following the NIST/SANS Incident Response lifecycle based on a ransomware attack simulation.
 * **Skills Demonstrated:** Incident scoping, impact assessment, and defining actionable containment, eradication, and recovery strategies.
 * **Artifact:** [Security Incident Journal](./reporting/security-incident-journal.md)
 
-####4. DDoS Attack Mitigation & Analysis (NIST CSF)
+#### 3. DDoS Attack Mitigation & Analysis (NIST CSF)
 * **Objective:** Analyzed a sudden network outage caused by an ICMP flood attack and mapped the technical response strategy to the NIST Cybersecurity Framework.
 * **Skills Demonstrated:** Incident lifecycle management, firewall rate-limiting configuration, IP spoofing defense, and IPS/IDS deployment planning.
 * **Artifact:** [Incident Report Analysis](./reporting/Incident-Report-Analysis.md)
