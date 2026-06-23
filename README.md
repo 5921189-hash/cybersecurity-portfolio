@@ -50,6 +50,11 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 * **Skills Demonstrated:** Incident scoping, impact assessment, and defining actionable containment, eradication, and recovery strategies.
 * **Artifact:** [Security Incident Journal](./reporting/security-incident-journal.md)
 
+####4. DDoS Attack Mitigation & Analysis (NIST CSF)
+* **Objective:** Analyzed a sudden network outage caused by an ICMP flood attack and mapped the technical response strategy to the NIST Cybersecurity Framework.
+* **Skills Demonstrated:** Incident lifecycle management, firewall rate-limiting configuration, IP spoofing defense, and IPS/IDS deployment planning.
+* **Artifact:** [Incident Report Analysis](./reporting/Incident-Report-Analysis.md)
+
 ---
 
 ## Contact Me
