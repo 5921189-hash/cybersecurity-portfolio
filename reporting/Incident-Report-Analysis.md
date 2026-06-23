@@ -7,6 +7,9 @@ This project demonstrates the practical application of the NIST Cybersecurity Fr
 - **Incident Type:** Distributed Denial of Service (DDoS) / ICMP Flooding
 - **Impact:** The organization experienced a sudden network outage where servers stopped responding to user requests, compromising the internal network.
 - **Duration:** The incident lasted for approximately two hours before full resolution was achieved.
+
+**Full scenrio** you can find [here](./reporting/scenario-for-IRA.md)
+
 ## 3. NIST CSF Alignment
 
 
