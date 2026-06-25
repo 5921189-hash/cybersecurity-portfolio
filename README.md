@@ -15,7 +15,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 
 ## Cybersecurity Projects
 
-### Project 1: Linux VPS Hardening & Cowrie Honeypot Deployment
+### Project 1: Linux VPS Hardening And Cowrie Honeypot Deployment
 **Description:** A hands-on project focused on securing an internet-facing Linux cloud infrastructure and deploying a controlled decoy environment (honeypot) to capture and analyze real-world malicious cyber activity.
 
 * **Infrastructure Hardening & Network Security:**
@@ -28,7 +28,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
   * Developed Bash scripts for automated log rotation and aggregation of Cowrie logs.
   * Analyzed automated attacker infrastructure, extracting malicious IP addresses (IP Geolocation), targeted credentials, and malware payloads.
 * **Artifacts & Documentation:**
-  * [Detailed VPS Hardening Documentation](./projects/vps-hardening/README.md)
+  * [Detailed VPS Hardening Documentation](./vps-hardening/ssh_config_guide.md)
   * [Honeypot Log Analysis Report](./projects/cowrie-analysis/README.md)
 
 ---
