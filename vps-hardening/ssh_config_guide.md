@@ -140,10 +140,24 @@ Default: deny (incoming), allow (outgoing), deny (routed)
 New profiles: skip
 To                         Action      From
 --                         ------      ----
-44588/tcp on tailscale0     ALLOW IN    Anywhere                  # Secure SSH via Tailscale
+44588/tcp on tailscale0     ALLOW IN    Anywhere                 
 ```
 Verification Outcome: An external scan (using `nmap -p 44588 <vps_public_ip>`) from an unauthenticated internet IP returns `filtered`, completely hiding the management interface from unauthorized malicious actors and automated internet background noise.
 
+### Phase 3: Client-Side Optimization
+To simplify operations while maintaining maximum security, a local configuration block was created on the management machine to map security controls to a seamless single-command login.
+
+1. **Client Configuration** (`~/.ssh/config`):
+   Opene ssh config (`nano ~/.ssh/config`), appended the following  block:
+   ```text
+   Host vps
+    HostName 100.X.Y.Z              # Private internal Tailscale IP address of the VPS
+    User secops                     # Hardened standard user account
+    Port 44588                      # Custom obfuscated SSH port
+    IdentityFile ~/.ssh/id_ed25519  # Local path to the passphrase-protected private key
+   ```
+2. **Operational Workflow**
+   Administrative access to the remote cloud environment is now securely initiated via a streamlined shortcut, which automatically utilizes the private key, custom port, and VPN routing table: `ssh prod-vps`
 
 
-
+   
