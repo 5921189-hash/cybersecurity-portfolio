@@ -97,7 +97,7 @@ To implement a strict Zero-Trust Network Access  model, the management plane (SS
 #### Step 1: VPS Node Provisioning And Tailnet Authentication
 1. Installed the Tailscale daemon on the Ubuntu VPS using the official repository script:
    ```bash
-   curl -fsSL [https://tailscale.com/install.sh](https://tailscale.com/install.sh) | sh
+   curl -fsSL https://tailscale.com/install.sh | sh
    ```
 2. Initiated the authentication process to register the VPS into the private Tailnet (coordination server):
    ```bash
