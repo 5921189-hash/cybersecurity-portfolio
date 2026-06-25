@@ -148,6 +148,7 @@ Verification Outcome: An external scan (using `nmap -p 44588 <vps_public_ip>`) f
 To simplify operations while maintaining maximum security, a local configuration block was created on the management machine to map security controls to a seamless single-command login.
 
 1. **Client Configuration** (`~/.ssh/config`):
+
    Opene ssh config (`nano ~/.ssh/config`), appended the following  block:
    ```text
    Host vps
@@ -156,7 +157,8 @@ To simplify operations while maintaining maximum security, a local configuration
     Port 44588                      # Custom obfuscated SSH port
     IdentityFile ~/.ssh/id_ed25519  # Local path to the passphrase-protected private key
    ```
-2. **Operational Workflow**
+3. **Operational Workflow**
+
    Administrative access to the remote cloud environment is now securely initiated via a streamlined shortcut, which automatically utilizes the private key, custom port, and VPN routing table: `ssh prod-vps`
 
 
