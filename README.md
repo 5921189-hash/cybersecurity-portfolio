@@ -18,13 +18,13 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 ### Project 1: Linux VPS Hardening And Cowrie Honeypot Deployment
 **Description:** A hands-on project focused on securing an internet-facing Linux cloud infrastructure and deploying a controlled decoy environment (honeypot) to capture and analyze real-world malicious cyber activity.
 
-* **Infrastructure Hardening & Network Security:**
+* **Infrastructure Hardening And Network Security:**
   * **Environment:** Provisioned and configured an Ubuntu VPS on DigitalOcean.
   * **Zero-Trust Network Access:** Integrated **Tailscale Mesh VPN** and configured **UFW (Uncomplicated Firewall)** to completely block public access to management ports, restricting SSH access strictly to the internal Tailscale network interface.
   * **SSH Daemon Hardening:** Disabled password authentication (`PasswordAuthentication no`) and root login (`PermitRootLogin no`), enforcing key-based authentication for standard users only. Changed the default SSH port to mitigate automated volumetric scanning.
   * **Client-Side Security:** Generated passphrase-protected SSH key pairs and optimized the local client workflow using a custom `~/.ssh/config` file for secure, aliased access.
 * **Honeypot Deployment & Analysis:**
-  * Deployed a **Cowrie SSH/Telnet Honeypot** on an isolated network layout to log brute-force campaigns.
+  * Deployed a **Cowrie SSH Honeypot** on an isolated network layout to log brute-force campaigns.
   * Developed Bash scripts for automated log rotation and aggregation of Cowrie logs.
   * Analyzed automated attacker infrastructure, extracting malicious IP addresses (IP Geolocation), targeted credentials, and malware payloads.
 * **Artifacts & Documentation:**
@@ -33,12 +33,12 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 
 ---
 
-### Project 2: Google Cybersecurity Professional Labs (Threat Analysis & Incident Response)
+### Project 2: Google Cybersecurity Professional Labs
 **Description:** A compilation of practical labs and analytical reports completed during the Google Cybersecurity program, demonstrating proficiency with industry-standard SOC tools.
 
-#### 1. Security Task Automation (Python & SQL)
-* **Objective:** Developed a Python script to automate the updates of an IP address allow-list and used SQL queries to audit database access logs.
-* **Skills Demonstrated:** Parsing text files in Python, conditional logic for security automation, and crafting optimized SQL queries for user privilege auditing.
+#### 1. Security Task Automation (Python And SQL)
+* **Objective:** Developed a Python script to automate the updates of an IP address allow-list.
+* **Skills Demonstrated:** Parsing text files in Python, conditional logic for security automation.
 * **Artifact:** [Python File Automation Script](./security-task-automation/File-Updates-in-Python/File-Updates-in-Python.md)
 
 #### 2. Incident Documentation and Response Playbooks (NIST Framework)
@@ -46,7 +46,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 * **Skills Demonstrated:** Incident scoping, impact assessment, and defining actionable containment, eradication, and recovery strategies.
 * **Artifact:** [Security Incident Journal](./reporting/security-incident-journal.md)
 
-#### 3. DDoS Attack Mitigation & Analysis (NIST CSF)
+#### 3. DDoS Attack Mitigation And Analysis (NIST CSF)
 * **Objective:** Analyzed a sudden network outage caused by an ICMP flood attack and mapped the technical response strategy to the NIST Cybersecurity Framework.
 * **Skills Demonstrated:** Incident lifecycle management, firewall rate-limiting configuration, IP spoofing defense, and IPS/IDS deployment planning.
 * **Artifact:** [Incident Report Analysis](./reporting/Incident-Report-Analysis.md)
