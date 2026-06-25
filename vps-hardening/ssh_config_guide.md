@@ -105,8 +105,45 @@ To implement a strict Zero-Trust Network Access  model, the management plane (SS
    ```
    _Operational Detail_: This command generates a unique interactive login URL. I authenticated the machine by logging into the Tailscale Admin Console via a web browser.
 
-   
+#### Step 2: Client-Side Mesh Configuration (Local Machine)
+1. Installed the Tailscale client on the local machine
+2. Authenticated the local machine into the same account, instantly building an encrypted WireGuard tunnel directly between the local client and the cloud VPS without needing a centralized VPN gateway.
 
+#### Step 3: Firewall Enforcement via UFW
+With the private overlay network active, the host firewall (UFW) was configured to drop all traffic from the public network interface (`eth0`) and explicitly whitelist SSH traffic coming only from the virtual Tailscale interface (`tailscale0`):
+
+   ```bash
+   # Disable the firewall just not to block myself
+   sudo ufw disable
+
+   # Reset UFW to a secure baseline
+   sudo ufw default deny incoming
+   sudo ufw default allow outgoing
    
+   # Allow SSH (Port 44588) ONLY over the Tailscale interface
+   sudo ufw allow in on tailscale0 to any port 44588 proto tcp comment 'Restrict SSH to Tailscale VPN'
    
-   
+   # Enable the firewall
+   sudo ufw enable
+   ```
+#### Step 4: Verifying the Network Isolation Posture
+To confirm that the attack surface was successfully minimized, I verified the UFW rules and performed an external port scan:
+
+```bash
+# Check UFW verbose status
+sudo ufw status verbose
+
+# Expected Output snippet:
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+To                         Action      From
+--                         ------      ----
+44588/tcp on tailscale0     ALLOW IN    Anywhere                  # Secure SSH via Tailscale
+```
+Verification Outcome: An external scan (using `nmap -p 44588 <vps_public_ip>`) from an unauthenticated internet IP returns `filtered`, completely hiding the management interface from unauthorized malicious actors and automated internet background noise.
+
+
+
+
