@@ -15,20 +15,21 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 
 ## Cybersecurity Projects
 
-### Project 1: VPS Hardening & Cowrie SSH/Telnet Honeypot Deployment
-**Description:** A hands-on project focused on setting up a controlled environment (decoy) to capture, log, and analyze real-world malicious activity and brute-force attacks.
+### Project 1: Linux VPS Hardening & Cowrie Honeypot Deployment
+**Description:** A hands-on project focused on securing an internet-facing Linux cloud infrastructure and deploying a controlled decoy environment (honeypot) to capture and analyze real-world malicious cyber activity.
 
-* **Architecture & Deployment:**
-  * Provisioned a cloud VPS running Linux.
-  * Configured a secure VPN tunnel for isolated administrative access.
-  * Changed the default SSH port and deployed the **Cowrie Honeypot** .
-* **Key Tasks Performed:**
-  * Implemented firewall policies (UFW)
-  * Developed Bash scripts for automated log rotation and aggregation of Cowrie JSON logs.
-  * Analyzed automated brute-force campaigns: extracted attacker IP addresses (IP Geolocation), compiled lists of targeted credentials, and tracked downloaded malware payloads.
+* **Infrastructure Hardening & Network Security:**
+  * **Environment:** Provisioned and configured an Ubuntu VPS on DigitalOcean.
+  * **Zero-Trust Network Access:** Integrated **Tailscale Mesh VPN** and configured **UFW (Uncomplicated Firewall)** to completely block public access to management ports, restricting SSH access strictly to the internal Tailscale network interface.
+  * **SSH Daemon Hardening:** Disabled password authentication (`PasswordAuthentication no`) and root login (`PermitRootLogin no`), enforcing key-based authentication for standard users only. Changed the default SSH port to mitigate automated volumetric scanning.
+  * **Client-Side Security:** Generated passphrase-protected SSH key pairs and optimized the local client workflow using a custom `~/.ssh/config` file for secure, aliased access.
+* **Honeypot Deployment & Analysis:**
+  * Deployed a **Cowrie SSH/Telnet Honeypot** on an isolated network layout to log brute-force campaigns.
+  * Developed Bash scripts for automated log rotation and aggregation of Cowrie logs.
+  * Analyzed automated attacker infrastructure, extracting malicious IP addresses (IP Geolocation), targeted credentials, and malware payloads.
 * **Artifacts & Documentation:**
-  * [Honeypot Log Analysis Report](./projects/cowrie-analysis/README.md) 
-  * [Sanitized Scripts](./projects/cowrie-analysis/configs/)
+  * [Detailed VPS Hardening Documentation](./projects/vps-hardening/README.md)
+  * [Honeypot Log Analysis Report](./projects/cowrie-analysis/README.md)
 
 ---
 
