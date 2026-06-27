@@ -49,7 +49,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 #### 3. DDoS Attack Mitigation And Analysis (NIST CSF)
 * **Objective:** Analyzed a sudden network outage caused by an ICMP flood attack and mapped the technical response strategy to the NIST Cybersecurity Framework.
 * **Skills Demonstrated:** Incident lifecycle management, firewall rate-limiting configuration, IP spoofing defense, and IPS/IDS deployment planning.
-* **Artifact:** [Incident Report Analysis](./reporting/Incident-Report-Analysis.md)
+* **Artifact:** [Incident Report Analysis](./reporting/Incident-Report-Analysis/README.md)
 
 ---
 
