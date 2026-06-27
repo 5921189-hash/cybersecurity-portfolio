@@ -7,7 +7,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 ## Tech Stack And Skills
 * **SIEM and Monitoring:** Log analysis, alert triage, creating detection rules.
 * **Network Security:** Wireshark, Nmap, TCP/IP paradigm, VPN configuration.
-* **Threat Intelligence & Analysis:** Honeypots (Cowrie), OSINT, PEStudio, malware behavior analysis.
+* **Threat Intelligence And Analysis:** Honeypots (Cowrie), OSINT, PEStudio, malware behavior analysis.
 * **OS and Scripting:** Linux System Administration (Bash), Automation (Python), Data Querying (SQL).
 * **Certifications:** Google Cybersecurity Professional Certificate, CompTIA Security+ .
 
