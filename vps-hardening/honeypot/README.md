@@ -1,4 +1,4 @@
-# Cowrie Honeypot: Log Management & Threat Intelligence
+# Cowrie Honeypot: Log Management And Threat Intelligence
 
 A lightweight, zero-dependency automation toolset designed to analyze, rotate, and extract actionable threat intelligence from Cowrie SSH/Telnet honeypot logs.
 
