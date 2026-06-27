@@ -4,7 +4,7 @@
 
 Hello! I am an aspiring Cybersecurity Analyst specializing in security monitoring, network traffic analysis, and incident management (Blue Team operations). I have a solid foundation in Linux administration, network protocols, and threat detection methodologies.
 
-## Tech Stack & Skills
+## Tech Stack And Skills
 * **SIEM and Monitoring:** Log analysis, alert triage, creating detection rules.
 * **Network Security:** Wireshark, Nmap, TCP/IP paradigm, VPN configuration.
 * **Threat Intelligence & Analysis:** Honeypots (Cowrie), OSINT, PEStudio, malware behavior analysis.
