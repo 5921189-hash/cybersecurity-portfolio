@@ -28,7 +28,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
   * Developed Bash scripts for automated log rotation and aggregation of Cowrie logs.
   * Analyzed automated attacker infrastructure, extracting malicious IP addresses (IP Geolocation), targeted credentials, and malware payloads.
 * **Artifacts & Documentation:**
-  * [Detailed VPS Hardening Documentation](./vps-hardening/ssh_config_guide.md)
+  * [Detailed VPS Hardening Documentation](./vps-hardening/ssh_config_guide/README.md)
   * Honeypot Log Analysis Report
 
 ---
