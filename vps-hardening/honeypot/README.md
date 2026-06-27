@@ -12,7 +12,7 @@ This project focuses on operationalizing honeypot data. Instead of letting logs 
 
 ## Scripts
 
-* [log_analyzer.py](//cybersecurity-portfolio/blob/main/security-task-automation/log-analyzer.py) - Built-in Python script for parsing and geo-locating login attempts.
+* [log_analyzer.py](/cybersecurity-portfolio/blob/main/security-task-automation/log-analyzer.py) - Built-in Python script for parsing and geo-locating login attempts.
 * [log_rotator.sh]() - Shell script for managing log archives.
 
 ---
