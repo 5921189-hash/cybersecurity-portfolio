@@ -44,7 +44,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
 #### 2. Incident Documentation and Response Playbooks (NIST Framework)
 * **Objective:** Documented security incidents (Incident State Forms) following the NIST/SANS Incident Response lifecycle based on a ransomware attack simulation.
 * **Skills Demonstrated:** Incident scoping, impact assessment, and defining actionable containment, eradication, and recovery strategies.
-* **Artifact:** [Security Incident Journal](./reporting/security-incident-journal.md)
+* **Artifact:** [Security Incident Journal](./reporting/security-incident-journal/README.md)
 
 #### 3. DDoS Attack Mitigation And Analysis (NIST CSF)
 * **Objective:** Analyzed a sudden network outage caused by an ICMP flood attack and mapped the technical response strategy to the NIST Cybersecurity Framework.
