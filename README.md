@@ -29,7 +29,7 @@ Hello! I am an aspiring Cybersecurity Analyst specializing in security monitorin
   * Analyzed automated attacker infrastructure, extracting malicious IP addresses (IP Geolocation), targeted credentials, and malware payloads.
 * **Artifacts & Documentation:**
   * [Detailed VPS Hardening Documentation](./vps-hardening/ssh_config_guide/README.md)
-  * Honeypot Log Analysis Report
+  * [Honeypot Log Analysis](/vps-hardening/honeypot/README.md)
 
 ---
 
