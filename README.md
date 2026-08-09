@@ -19,6 +19,7 @@ CompTIA Security+ (SY0-701) · Google Cybersecurity Professional Certificate · 
 A Windows Server 2025 domain controller in VirtualBox, promoted to Active Directory Domain Services, with a Windows Pro client joined to the domain. Domain users and security groups created and managed. Group Policy Objects that standardise the desktop for one target group: enforced wallpaper, a deployed shortcut, and live machine and account details shown on the desktop background. Policy delivery verified on the client with `gpupdate` and `gpresult`.
 
 This is the closest thing here to day-to-day first-line support: accounts, groups, permissions, and working out why a policy did or did not reach a machine.
+
 ---
 
 ### 2. Linux VPS Hardening and Cowrie Honeypot
@@ -31,6 +32,7 @@ Hardening: Tailscale mesh VPN with UFW blocking public access to management port
 Honeypot: a Cowrie SSH honeypot on an isolated network layout, logging brute-force campaigns. Bash scripts handle log rotation and aggregation. Analysis covers attacker source addresses and geolocation, the credential lists being sprayed, and the payloads pulled down after access.
 
 Artifacts: [VPS hardening documentation](./vps-hardening/ssh_config_guide/README.md) · [honeypot log analysis](/vps-hardening/honeypot/README.md)
+
 ---
 
 ### 3. Google Cybersecurity Labs
