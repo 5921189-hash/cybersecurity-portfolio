@@ -1,58 +1,64 @@
-# cybersecurity-portfolio
+# Boris Mats — IT and Security Operations Portfolio
 
-# SOC Analyst Portfolio | Boris Mats
+I'm moving into IT and security operations. Before this I spent nine years as a veterinary surgeon, and since 2024 I've worked as a government veterinary officer and lead epidemiological investigator at the Israeli Ministry of Agriculture, where the job is investigation: gather evidence from noisy sources, work out what actually happened, and write it up so it holds under scrutiny.
 
-Hello! I am an aspiring Cybersecurity Analyst specializing in security monitoring, network traffic analysis, and incident management (Blue Team operations). I have a solid foundation in Linux administration, network protocols, and threat detection methodologies.
+Everything in this repository I built and ran myself.
 
-## Tech Stack And Skills
-* **SIEM and Monitoring:** Log analysis, alert triage, creating detection rules.
-* **Network Security:** Wireshark, Nmap, TCP/IP paradigm, VPN configuration.
-* **Threat Intelligence And Analysis:** Honeypots (Cowrie), OSINT, PEStudio, malware behavior analysis.
-* **OS and Scripting:** Linux System Administration (Bash), Automation (Python), Data Querying (SQL).
-* **Certifications:** Google Cybersecurity Professional Certificate, CompTIA Security+ .
+**Looking for a first role in Help Desk, NOC, or Tier 1 SOC.** Based in Holon, available for shift work.
+
+CompTIA Security+ (SY0-701) · Google Cybersecurity Professional Certificate · TryHackMe Pre Security
 
 ---
-
-## Cybersecurity Projects
-
-### Project 1: Linux VPS Hardening And Cowrie Honeypot Deployment
-**Description:** A hands-on project focused on securing an internet-facing Linux cloud infrastructure and deploying a controlled decoy environment (honeypot) to capture and analyze real-world malicious cyber activity.
-
-* **Infrastructure Hardening And Network Security:**
-  * **Environment:** Provisioned and configured an Ubuntu VPS on DigitalOcean.
-  * **Zero-Trust Network Access:** Integrated **Tailscale Mesh VPN** and configured **UFW (Uncomplicated Firewall)** to completely block public access to management ports, restricting SSH access strictly to the internal Tailscale network interface.
-  * **SSH Daemon Hardening:** Disabled password authentication (`PasswordAuthentication no`) and root login (`PermitRootLogin no`), enforcing key-based authentication for standard users only. Changed the default SSH port to mitigate automated volumetric scanning.
-  * **Client-Side Security:** Generated passphrase-protected SSH key pairs and optimized the local client workflow using a custom `~/.ssh/config` file for secure, aliased access.
-* **Honeypot Deployment & Analysis:**
-  * Deployed a **Cowrie SSH Honeypot** on an isolated network layout to log brute-force campaigns.
-  * Developed Bash scripts for automated log rotation and aggregation of Cowrie logs.
-  * Analyzed automated attacker infrastructure, extracting malicious IP addresses (IP Geolocation), targeted credentials, and malware payloads.
-* **Artifacts & Documentation:**
-  * [Detailed VPS Hardening Documentation](./vps-hardening/ssh_config_guide/README.md)
-  * [Honeypot Log Analysis](/vps-hardening/honeypot/README.md)
-
 ---
 
-### Project 2: Google Cybersecurity Professional Labs
-**Description:** A compilation of practical labs and analytical reports completed during the Google Cybersecurity program, demonstrating proficiency with industry-standard SOC tools.
+## Projects
 
-#### 1. Security Task Automation (Python And SQL)
-* **Objective:** Developed a Python script to automate the updates of an IP address allow-list.
-* **Skills Demonstrated:** Parsing text files in Python, conditional logic for security automation.
-* **Artifact:** [Python File Automation Script](./security-task-automation/File-Updates-in-Python/README.md)
+### 1. Windows Domain Controller and Group Policy Lab
+**[→ ad-domain-gpo-lab](./ad-domain-gpo-lab)**
 
-#### 2. Incident Documentation and Response Playbooks (NIST Framework)
-* **Objective:** Documented security incidents (Incident State Forms) following the NIST/SANS Incident Response lifecycle based on a ransomware attack simulation.
-* **Skills Demonstrated:** Incident scoping, impact assessment, and defining actionable containment, eradication, and recovery strategies.
-* **Artifact:** [Security Incident Journal](./reporting/security-incident-journal/README.md)
+A Windows Server 2025 domain controller in VirtualBox, promoted to Active Directory Domain Services, with a Windows Pro client joined to the domain. Domain users and security groups created and managed. Group Policy Objects that standardise the desktop for one target group: enforced wallpaper, a deployed shortcut, and live machine and account details shown on the desktop background. Policy delivery verified on the client with `gpupdate` and `gpresult`.
 
-#### 3. DDoS Attack Mitigation And Analysis (NIST CSF)
-* **Objective:** Analyzed a sudden network outage caused by an ICMP flood attack and mapped the technical response strategy to the NIST Cybersecurity Framework.
-* **Skills Demonstrated:** Incident lifecycle management, firewall rate-limiting configuration, IP spoofing defense, and IPS/IDS deployment planning.
-* **Artifact:** [Incident Report Analysis](./reporting/Incident-Report-Analysis/README.md)
-
+This is the closest thing here to day-to-day first-line support: accounts, groups, permissions, and working out why a policy did or did not reach a machine.
 ---
 
-## Contact Me
-* **Email:** 5921189@gmail.com
-* **LinkedIn:** [Boris Mats](https://www.linkedin.com/in/boris-mats-4b7102254/)
+### 2. Linux VPS Hardening and Cowrie Honeypot
+**[→ vps-hardening](./vps-hardening)**
+
+An internet-facing Ubuntu VPS on DigitalOcean, hardened and then deliberately given something to attack.
+
+Hardening: Tailscale mesh VPN with UFW blocking public access to management ports, SSH restricted to the internal interface, password and root login disabled, key-based authentication only, non-default SSH port. Client side uses a passphrase-protected key pair and a `~/.ssh/config` for aliased access.
+
+Honeypot: a Cowrie SSH honeypot on an isolated network layout, logging brute-force campaigns. Bash scripts handle log rotation and aggregation. Analysis covers attacker source addresses and geolocation, the credential lists being sprayed, and the payloads pulled down after access.
+
+Artifacts: [VPS hardening documentation](./vps-hardening/ssh_config_guide/README.md) · [honeypot log analysis](/vps-hardening/honeypot/README.md)
+---
+
+### 3. Google Cybersecurity Labs
+**[→ security-task-automation](./security-task-automation) · [→ reporting](./reporting)**
+
+- **[Security task automation](./security-task-automation/File-Updates-in-Python/README.md)** — a Python script that maintains an IP allow-list: parsing the file, applying conditional logic, writing it back.
+- **[Incident documentation](./reporting/security-incident-journal/README.md)** — incident state forms for a ransomware simulation, written against the NIST and SANS incident response lifecycle. Scoping, impact assessment, containment, eradication, recovery.
+- **[DDoS analysis](./reporting/Incident-Report-Analysis/README.md)** — an ICMP flood traced from the outage back to the cause, with the response mapped to the NIST Cybersecurity Framework: rate limiting, spoofing defence, IPS and IDS placement.
+
+---
+---
+
+## Skills
+
+Grouped by what job postings actually ask for.
+
+**Windows and end-user support.** Windows 10 and 11, Windows Server 2025, Active Directory Domain Services, Group Policy, user and security group administration, Event Viewer, printers and peripherals, Microsoft Office. Microsoft 365 administration is coursework so far, not yet hands-on — I would rather say that than pad the list.
+
+**Networking.** TCP/IP, DNS, DHCP, HTTP/S, VPN, Wi-Fi. Packet capture and analysis in Wireshark and tcpdump, including port mirroring on a managed switch to see real traffic rather than lab traffic.
+
+**Linux and scripting.** Ubuntu and Kali administration, UFW, SSH hardening, systemd, cron. Python for log parsing and data extraction, Bash for automation.
+
+**Security monitoring.** Log analysis and alert triage, honeypot deployment and attacker behaviour analysis, incident documentation against NIST.
+
+---
+---
+
+## Contact
+
+Email: 5921189@gmail.com
+LinkedIn: [boris-mats](https://www.linkedin.com/in/boris-mats-4b7102254/)
