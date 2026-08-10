@@ -43,3 +43,23 @@ Created domain user accounts and security groups in Active Directory , and manag
 
 > Active Directory with the security group open on the Members tab.
 > ![group member](./images/groupmember.png)
+
+## 4. Group Policy
+
+Authored and linked Group Policy Objects applying to one target security group:
+
+- **Enforced desktop wallpaper.** Every member of the group gets the same background, set centrally.
+- **Deployed shortcut.** A specific shortcut is placed on each group member's desktop.
+- **Machine and account information on the desktop.** Host and account details are displayed on the desktop background, so a support call starts with the user reading what is already on their screen instead of hunting through system properties.
+
+> How it looks like on user`s desktop
+> ![GPO view](./images/GPO_user_view.png)
+
+> Group Policy Management showing the GPO linked, with Security Filtering scoped to the target group
+> ![GPO sec](./images/GPO_sec.png)
+
+> Group Policy editor - shortcut
+> ![GPO shortcut](./images/GPO_shortcut.png)
+
+> Group Policy editor - logon script
+> ![GPO logon](./images/GPO_logon.png)
