@@ -52,9 +52,6 @@ Authored and linked Group Policy Objects applying to one target security group:
 - **Deployed shortcut.** A specific shortcut is placed on each group member's desktop.
 - **Machine and account information on the desktop.** Host and account details are displayed on the desktop background, so a support call starts with the user reading what is already on their screen instead of hunting through system properties.
 
-> How it looks like on user`s desktop
-> ![GPO view](./images/GPO_user_view.png)
-
 > Group Policy Management showing the GPO linked, with Security Filtering scoped to the target group
 > ![GPO sec](./images/GPO_sec.png)
 
@@ -63,3 +60,38 @@ Authored and linked Group Policy Objects applying to one target security group:
 
 > Group Policy editor - logon script
 > ![GPO logon](./images/GPO_logon.png)
+
+## 5. Verification
+
+Forced a policy refresh on the client with `gpupdate /force`, then confirmed with `gpresult` that the intended GPOs applied to members of the target group, and did not apply to accounts outside it.
+
+> The client desktop as a group member sees it: wallpaper, the deployed shortcut, and the machine and account details on the background.
+> ![GPO view](./images/GPO_user_view.png)
+
+> 📸  `gpresult` with the applied GPO visible.
+> ![GPO rusults](./images/GPO_results.png)
+
+
+---
+
+## What broke and what it taught me
+
+**DNS is the whole game.** Before the client used the DC as its DNS server, domain join failed with an unhelpful message. Nothing in Active Directory works until name resolution points at the domain controller.
+
+**Policy scope is not obvious.** A GPO linked at the wrong level reaches more accounts than intended. `gpresult` is the only way to know what actually landed rather than what you think you configured.
+
+**Refresh is not instant.** Group Policy applies on a schedule. `gpupdate /force` is what turns "I changed it" into "it is live" while testing.
+
+## Relevance to Help Desk and NOC work
+
+First-line support is largely this: unlock and reset accounts, add and remove people from groups, work out why a user is missing a mapped drive or a shortcut, and confirm whether a policy reached a machine.
+
+## Next steps
+
+- A second client, to see policy behaviour across more than one machine.
+- File shares with group-based NTFS permissions.
+- A logon script, compared against Group Policy Preferences as a delivery method.
+
+---
+
+*Part of my IT and security operations portfolio: [github.com/5921189-hash/cybersecurity-portfolio](https://github.com/5921189-hash/cybersecurity-portfolio)*
